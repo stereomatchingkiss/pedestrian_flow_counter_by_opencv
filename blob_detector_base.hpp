@@ -19,7 +19,7 @@ class blob_detector_base
 {
 public:
     blob_detector_base();
-    ~blob_detector_base();
+    virtual ~blob_detector_base();
 
     blob_detector_base(blob_detector_base const&) = delete;
     blob_detector_base& operator=(blob_detector_base const&) = delete;
