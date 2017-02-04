@@ -13,6 +13,8 @@ tracking algorithms apply on it too.
 5. Frame rate cannot be too low and need to be stable
 
 Although there are many limitations, I think this is still a good start for pedestrian flow counter.
+To make things easier to understand, I design the api careful and separate the operations into different
+modules.
 
 ##How to compile
 0. This project rely on makefile generator of Qt5, please install latest Qt5 in your pc
@@ -27,8 +29,11 @@ you do not do anything with this lib, I use the header of this lib only
 are "qmake INCLUDEPATH" and "qmake LIBS"
 8. If you still cannot figure out how to compile this project, please open an issue on github
 
-[Example on youtube](https://www.youtube.com/watch?v=OpL0ivj0QRI)
-[Original video of youtube](
-https://mega.nz/#!w59VUCjI!qM5xMwFYK5_ZDYpM6YVlRGqG_Mrs9B9W6P3x2xmuYjk
+##Links
+
+1. [Example on youtube](https://www.youtube.com/watch?v=OpL0ivj0QRI)
+2. [Original video of youtube](
+ https://mega.nz/#!w59VUCjI!qM5xMwFYK5_ZDYpM6YVlRGqG_Mrs9B9W6P3x2xmuYjk
 )
+3. [qmake tutorial](http://doc.qt.io/qt-4.8/qmake-tutorial.html)
 
