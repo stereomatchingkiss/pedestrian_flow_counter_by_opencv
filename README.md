@@ -1,5 +1,7 @@
 # pedestrian_flow_counter
 
+[![Track you](http://img.youtube.com/vi/OpL0ivj0QRI/100.jpg)](https://www.youtube.com/watch?v=OpL0ivj0QRI "Tracking")
+
 This is a simple example to show you how to count the flow of pedestrian by opencv.
 Since this algorithm rely on tracking algorithm, we can expect the limitation of
 tracking algorithms apply on it too.
