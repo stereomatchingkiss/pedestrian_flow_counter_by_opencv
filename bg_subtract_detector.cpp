@@ -41,12 +41,12 @@ struct bg_subtract_detector::impl
 
     double anchor_ratio_;
     cv::Ptr<cv::BackgroundSubtractor> bg_subtract_;
+    double blob_min_size_ = 4000;
     std::vector<cv::Rect> bound_rects_;
     std::vector<std::vector<cv::Point>> contours_;
     int detect_margin_ = 50;
     cv::Mat fg_;
     cv::Mat gray_img_;
-    double blob_min_size_ = 4000;
     cv::Mat input_;
     cv::Mat kernel_ = cv::getStructuringElement(cv::MORPH_RECT, {7,7});
     size_t neglect_frame_size_ = 10;
@@ -73,7 +73,7 @@ bg_subtract_detector::~bg_subtract_detector()
 
 void bg_subtract_detector::clear()
 {
-    process_frame_ = 0;
+    pimpl_->process_frame_ = 0;
 }
 
 void bg_subtract_detector::detect_blob(const cv::Mat &input)
