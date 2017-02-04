@@ -19,17 +19,6 @@
 
 namespace{
 
-std::string const edin_file = "../computer_vision_dataset/human_count"
-                              "/EdinBurgh/doric_test";
-
-std::string const people_counter = "../computer_vision_dataset/human_count/"
-                                   "peopleCounter.avi";
-
-std::string const seq_eth = "../computer_vision_dataset/human_count/"
-                            "ewap_dataset/seq_eth/seq_eth.avi";
-std::string const seq_hotel = "../computer_vision_dataset/human_count/"
-                              "ewap_dataset/seq_hotel/seq_hotel.avi";
-
 cv::VideoWriter create_video_writer(std::string const &video)
 {
     cv::VideoCapture cap(video);
@@ -113,7 +102,7 @@ void people_count_test::remove_outlier_blobs()
 {
     int const key_point = img_.rows / 2;
     auto it = std::remove_if(std::begin(bound_rects_), std::end(bound_rects_),
-                             [=](auto const &r)
+                             [=](cv::Rect const &r)
     {
         auto const center = ocv::rect_center(r);
         return center.y < key_point - offset_ ||
@@ -175,11 +164,7 @@ void people_count_test::put_inout_msg()
     {0 + 20, img_.rows / 2 + 20}, cv::FONT_HERSHEY_TRIPLEX, 1, {255, 0, 0});
 }
 
-void people_count_test::test_00()
+void people_count_test::test_00(std::string const &file)
 {
-    track(people_counter, 10);
-}
-
-void people_count_test::test_01()
-{        
+    track(file, 10);
 }

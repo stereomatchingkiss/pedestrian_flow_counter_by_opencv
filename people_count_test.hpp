@@ -16,8 +16,7 @@ public:
 
     ~people_count_test();
 
-    void test_00();
-    void test_01();
+    void test_00(std::string const &file);
 
 private:
     void draw_measure_line();
