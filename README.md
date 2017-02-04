@@ -31,7 +31,12 @@ you do not do anything with this lib, I use the header of this lib only
 6. If your opencv do not compile with cuda, remove "DEFINES += OPENCV_USE_CUDA" in "people_counter.pro"
 7. Install opencv3.2 on your pc, set the include path and link to the libraries. The keywords you need to know 
 are "qmake INCLUDEPATH" and "qmake LIBS"
-8. If you still cannot figure out how to compile this project, please open an issue on github
+8. Use QtCreator to open "people_counter.pro"
+9. Click "Project" icon on left sidebar
+10. Click "Run" text on left sidebar
+11. Enter video link in "command line arguments"(ex : /home/ramsus/Qt/computer_vision_dataset/human_count/peopleCounter.avi)
+12. Change to release and click run(on left sidebar)
+13. If you still cannot figure out how to compile this project, please open an issue on github
 
 ##Links
 
