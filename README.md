@@ -1,7 +1,7 @@
 # pedestrian_flow_counter
 
 [![Track you](
-https://mega.nz/#!95kFAb4Q!hY1lIi_7NgNZWbr60T27zXr_W1iPCh-TCw1K-y1yNb0
+http://i.imgur.com/Qvjr4Vr.png
 )](http://www.youtube.com/watch?v=OpL0ivj0QRI "Track human")
 
 This is a simple example to show you how to count the flow of pedestrian by opencv.
