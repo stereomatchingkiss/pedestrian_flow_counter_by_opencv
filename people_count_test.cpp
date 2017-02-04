@@ -1,10 +1,12 @@
 #include "people_count_test.hpp"
 #include "bg_subtract_detector.hpp"
-#include "dlib_tracker.hpp"
 #include "opencv_trackers.hpp"
 
+#ifdef HAS_DLIB
+#include "dlib_tracker.hpp"
 #include <dlib/image_processing.h>
 #include <dlib/opencv/cv_image.h>
+#endif
 
 #include <ocv_libs/core/contour_utility.hpp>
 #include <ocv_libs/core/rect_utility.hpp>
