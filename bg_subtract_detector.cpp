@@ -112,11 +112,12 @@ void bg_subtract_detector::impl::detect_blob(cv::Mat const &input)
 {
     input_ = input;
     cv::cvtColor(input_, gray_img_, CV_BGR2GRAY);
-    bg_subtract_->apply(gray_img_, fg_);
-    ++process_frame_;
+    bg_subtract_->apply(gray_img_, fg_);    
     if(process_frame_ > neglect_frame_size_){
         preprocess_fg();
         ocv::contours_to_bounding_rect(contours_, bound_rects_);
         remove_outlier_blobs();
+    }else{
+        ++process_frame_;
     }
 }
