@@ -35,7 +35,7 @@ void opencv_trackers::update(const cv::Mat &image)
 {
     roi_.clear();
     std::cout<<"tracker size : "<<trackers_.size()<<std::endl;
-    for(auto it = std::begin(trackers_); it != std::end(trackers_);){        
+    for(auto it = std::begin(trackers_); it != std::end(trackers_);){
         cv::Rect2d current_roi;
         if(it->track_->update(image, current_roi) && it->track_time_ < max_track_frame_){
             roi_.emplace_back(current_roi);
@@ -58,10 +58,10 @@ void opencv_trackers::add_blob(const cv::Mat &input, const cv::Rect2d &roi)
     }
 }
 
-void opencv_trackers::match_existing_rects(const cv::Mat &image,
-                                           const std::vector<cv::Rect> &current_blobs)
+void opencv_trackers::track(const cv::Mat &image,
+                            const std::vector<cv::Rect> &current_blobs)
 {        
-    tracker_base::match_existing_rects(image, current_blobs, roi_, lost_track_ratio_);
+    tracker_base::track(image, current_blobs, roi_, lost_track_ratio_);
 }
 
 void opencv_trackers::set_lost_track_ratio(double ratio) noexcept

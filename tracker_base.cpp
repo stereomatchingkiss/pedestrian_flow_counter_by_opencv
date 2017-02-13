@@ -12,10 +12,10 @@ tracker_base::~tracker_base()
 
 }
 
-void tracker_base::match_existing_rects(const cv::Mat &image,
-                                        const std::vector<cv::Rect> &current_blobs,
-                                        const std::vector<cv::Rect2d> &roi,
-                                        double lost_track_ratio)
+void tracker_base::track(const cv::Mat &image,
+                         const std::vector<cv::Rect> &current_blobs,
+                         const std::vector<cv::Rect2d> &roi,
+                         double lost_track_ratio)
 {
     update(image);
     if(!roi.empty()){

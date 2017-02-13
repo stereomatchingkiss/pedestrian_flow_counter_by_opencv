@@ -21,15 +21,15 @@ public:
 
     virtual size_t get_max_track_frame() const noexcept = 0;
 
-    virtual void match_existing_rects(cv::Mat const &image,
-                                      std::vector<cv::Rect> const &current_blobs) = 0;
+    virtual void track(cv::Mat const &image,
+                       std::vector<cv::Rect> const &current_blobs) = 0;
     virtual void set_lost_track_ratio(double ratio) noexcept = 0;
     virtual void set_max_track_frame(size_t size) noexcept = 0;
 
 protected:
-    virtual void match_existing_rects(const cv::Mat &image, const std::vector<cv::Rect> &current_blobs,
-                                      std::vector<cv::Rect2d> const &roi,
-                                      double lost_track_ratio);
+    virtual void track(const cv::Mat &image, const std::vector<cv::Rect> &current_blobs,
+                       std::vector<cv::Rect2d> const &roi,
+                       double lost_track_ratio);
 
 private:
     virtual void add_blob(cv::Mat const &input, cv::Rect2d const &roi) = 0;

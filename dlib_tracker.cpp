@@ -37,10 +37,10 @@ size_t dlib_tracker::get_max_track_frame() const noexcept
     return max_track_frame_;
 }
 
-void dlib_tracker::match_existing_rects(const cv::Mat &image,
-                                        const std::vector<cv::Rect> &current_blobs)
+void dlib_tracker::track(const cv::Mat &image,
+                         const std::vector<cv::Rect> &current_blobs)
 {
-    tracker_base::match_existing_rects(image, current_blobs, roi_, lost_track_ratio_);
+    tracker_base::track(image, current_blobs, roi_, lost_track_ratio_);
 }
 
 void dlib_tracker::set_lost_track_ratio(double ratio) noexcept

@@ -84,13 +84,13 @@ void people_count_test::track(std::string const &video)
 {
     cv::VideoCapture cap(video);
     if(cap.isOpened()){
-        init_data();        
+        init_data();
         cv::VideoWriter vwrite = create_video_writer(video);
         cap>>img_;
         for(; !img_.empty(); cap>>img_){
             draw_measure_line();
             blob_detector_->detect_blob(img_);
-            tracker_->match_existing_rects(img_, blob_detector_->get_roi());
+            tracker_->track(img_, blob_detector_->get_roi());
             tracker_->draw_track_blobs(img_, img_);
             put_inout_msg();
             cv::imshow("img", img_);
@@ -99,7 +99,7 @@ void people_count_test::track(std::string const &video)
             int const c = cv::waitKey(30);
             if (c == 'q' || c == 'Q' || (c & 255) == 27){
                 break;
-            }            
+            }
         }
     }else{
         std::cerr<<"cannot open "<<video<<"\n";

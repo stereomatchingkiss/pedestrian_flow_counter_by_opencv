@@ -11,14 +11,14 @@ public:
     explicit opencv_trackers(std::function<bool(cv::Rect2d const &roi)> legal_roi_strategy,
                              std::function<void(cv::Rect2d const &origin_roi,
                                                 cv::Rect2d const &current_roi)> lost_track_strategy,
-                             std::string tracker_type = "KCF");    
+                             std::string tracker_type = "KCF");
 
     void draw_track_blobs(cv::Mat const &input, cv::Mat &output) override;
 
     size_t get_max_track_frame() const noexcept override;
 
-    void match_existing_rects(cv::Mat const &image,
-                              std::vector<cv::Rect> const &current_blobs) override;
+    void track(cv::Mat const &image,
+               std::vector<cv::Rect> const &current_blobs) override;
 
     void set_lost_track_ratio(double ratio) noexcept override;
     void set_max_track_frame(size_t size) noexcept override;
