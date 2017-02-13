@@ -36,12 +36,7 @@ public:
      * @param input image want to detect interesting blob
      */
     virtual void detect_blob(cv::Mat const &input) = 0;
-    /**
-     * @brief get the image after processed
-     * @return image after processed
-     * @warning must called detect_blob before you call this api
-     */
-    virtual cv::Mat get_processed_image() const = 0;
+
     /**
      * @brief get interesting regions
      * @return bounding boxes of interesting regions

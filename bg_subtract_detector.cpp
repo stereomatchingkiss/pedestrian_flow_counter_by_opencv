@@ -50,8 +50,7 @@ struct bg_subtract_detector::impl
     cv::Mat input_;
     cv::Mat kernel_ = cv::getStructuringElement(cv::MORPH_RECT, {7,7});
     size_t neglect_frame_size_ = 10;
-    size_t process_frame_ = 0;
-    cv::Mat processed_img_;
+    size_t process_frame_ = 0;    
 };
 
 bg_subtract_detector::bg_subtract_detector(cv::Ptr<cv::BackgroundSubtractor> bg_subtractor,
@@ -79,11 +78,6 @@ void bg_subtract_detector::clear()
 void bg_subtract_detector::detect_blob(const cv::Mat &input)
 {
     pimpl_->detect_blob(input);
-}
-
-cv::Mat bg_subtract_detector::get_processed_image() const
-{
-    return pimpl_->processed_img_;
 }
 
 const std::vector<cv::Rect> &bg_subtract_detector::get_roi() const
