@@ -24,7 +24,7 @@ modules.
 0. This project rely on makefile generator of Qt5, please install latest Qt5 in your pc
 1. Create a folder on your pc, let us assume it called my_folder
 2. Go to my_folder, open your terminal and type "git clone https://github.com/stereomatchingkiss/ocv_libs",
-you do not do anything with this lib, I use the header of this lib only
+you do not need to build the whole lib because I use some headers of this lib only
 3. Type "git clone https://github.com/stereomatchingkiss/pri"
 4. Type "git clone https://github.com/stereomatchingkiss/pedestrian_flow_counter_by_opencv"
 5. If your opencv do not compile with tbb, remove the "include(../pri/tbb.pri)" in "people_counter.pro"
